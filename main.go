@@ -10,7 +10,7 @@ import (
 
 func main() {
 	mux := chi.NewRouter()
-	mux.MethodFunc(http.MethodGet, "/v2/condutores/{cpf}/{nome}", func(w http.ResponseWriter, r *http.Request) {
+	mux.MethodFunc(http.MethodGet, "/v2/condutores/consultarRnpc/cpf/{cpf}/nome/{nome}", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		ctx := r.Context().Value(chi.RouteCtxKey).(*chi.Context)
 
