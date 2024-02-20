@@ -27,6 +27,11 @@ func main() {
 		}
 		firstDigit, _ := strconv.Atoi(string(cpf[0]))
 
+		if firstDigit == 0 {
+			w.WriteHeader(http.StatusNotFound)
+			return
+		}
+
 		isPositive := false
 		if firstDigit%2 == 0 {
 			isPositive = true
